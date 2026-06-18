@@ -73,7 +73,7 @@ export default function SellerOrderDetail({
         onBack={() => router.push("/seller/pesanan")}
       />
 
-      <div className="flex-1 overflow-y-auto p-4">
+      <div className="flex-1 overflow-y-auto p-5 pb-8">
         {/* Header */}
         <Card>
           <h2 className="mb-1.5 text-[22px] font-extrabold">

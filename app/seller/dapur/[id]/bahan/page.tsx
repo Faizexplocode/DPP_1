@@ -29,7 +29,7 @@ export default function BahanPage({
         onBack={() => router.push(`/seller/dapur/${id}`)}
       />
 
-      <div className="flex-1 overflow-y-auto p-4">
+      <div className="flex-1 overflow-y-auto p-5 pb-8">
         {/* Servings Counter */}
         <h3 className="text-center text-xs font-extrabold uppercase tracking-widest text-muted">
           Jumlah Porsi

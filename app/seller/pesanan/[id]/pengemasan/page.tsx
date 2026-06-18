@@ -40,7 +40,7 @@ export default function PengemasanPage({
         onBack={() => router.push(`/seller/pesanan/${id}`)}
       />
 
-      <div className="flex-1 overflow-y-auto p-4">
+      <div className="flex-1 overflow-y-auto p-5 pb-8">
         <div className="mb-4 text-center">
           <h3 className="text-lg font-extrabold">
             {order.title} - Target: {order.target} kotak

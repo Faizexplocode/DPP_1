@@ -61,7 +61,7 @@ export default function UpdatePage({
         onBack={() => router.push(`/seller/pesanan/${id}`)}
       />
 
-      <div className="flex-1 overflow-y-auto p-4">
+      <div className="flex-1 overflow-y-auto p-5 pb-8">
         {/* Info Note */}
         <div className="mb-4 rounded-[14px] border border-border bg-[#f1f5ed] p-3.5 text-xs leading-relaxed text-muted">
           Update ini akan dikirim otomatis ke pembeli sebagai notifikasi

@@ -27,7 +27,7 @@ export default function FotoProgres({
         onBack={() => router.push(`/buyer/pesanan/${id}`)}
       />
 
-      <div className="flex-1 overflow-y-auto p-4">
+      <div className="flex-1 overflow-y-auto p-5 pb-8">
         <p className="mb-3 text-center text-xs text-muted">
           {order.title} &middot; Tahap: {getStatusLabel(order.stage)}
         </p>

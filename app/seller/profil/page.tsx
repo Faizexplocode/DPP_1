@@ -20,7 +20,7 @@ export default function SellerProfil() {
         </h1>
       </div>
 
-      <div className="flex-1 overflow-y-auto p-4">
+      <div className="flex-1 overflow-y-auto p-5 pb-8">
         <HeroCard className="mb-4">
           <div className="flex items-center justify-between">
             <div>

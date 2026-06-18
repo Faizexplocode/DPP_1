@@ -67,7 +67,7 @@ export default function BuyerOrderDetail({
         onBack={() => router.push("/buyer/pesanan")}
       />
 
-      <div className="flex-1 overflow-y-auto p-4">
+      <div className="flex-1 overflow-y-auto p-5 pb-8">
         {/* Order Info */}
         <Card>
           <h2 className="mb-1.5 text-lg font-extrabold">

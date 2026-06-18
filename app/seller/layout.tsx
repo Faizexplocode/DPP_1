@@ -55,7 +55,7 @@ export default function SellerLayout({
     <OrderProvider>
       <ToastProvider>
         <div className="screen">
-          <div className="flex flex-1 flex-col overflow-y-auto">{children}</div>
+          <div className="flex flex-1 flex-col overflow-hidden">{children}</div>
 
           {!hideNav && (
             <nav className="flex-shrink-0 flex h-[76px] items-center justify-around border-t border-border bg-surface z-10">

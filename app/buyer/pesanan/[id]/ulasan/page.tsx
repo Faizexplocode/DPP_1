@@ -31,7 +31,7 @@ export default function UlasanPage({
     <>
       <TopBar title="Beri Ulasan" onBack={() => router.push("/buyer")} />
 
-      <div className="flex-1 overflow-y-auto p-4">
+      <div className="flex-1 overflow-y-auto p-5 pb-8">
         <Card className="mb-4">
           <h2 className="mb-1.5 text-lg font-extrabold">
             {order.title} — {order.seller}
