@@ -5,7 +5,7 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { Camera, MapPin, CircleCheck, MessageSquare } from "lucide-react";
 import { useOrders } from "@/app/context/order-context";
-import { getStatusLabel, buyerTimelineStages } from "@/app/lib/mock-data";
+import { buyerTimelineStages } from "@/app/lib/mock-data";
 import TopBar from "@/app/components/layout/top-bar";
 import { Card } from "@/app/components/ui/card";
 import { Timeline } from "@/app/components/ui/timeline";
@@ -67,11 +67,11 @@ export default function BuyerOrderDetail({
         onBack={() => router.push("/buyer/pesanan")}
       />
 
-      <div className="flex-1 overflow-y-auto p-5 pb-8">
+      <div className="flex-1 overflow-y-auto px-5 py-4 pb-8">
         {/* Order Info */}
         <Card>
           <h2 className="mb-1.5 text-lg font-extrabold">
-            {order.title} — {order.seller}
+            {order.title} - {order.seller}
           </h2>
           <p className="text-xs text-muted">
             {order.servings} {order.unit}
@@ -101,7 +101,7 @@ export default function BuyerOrderDetail({
               </div>
               <div>
                 <p className="text-sm font-bold">
-                  Foto dikirim seller — tap untuk lihat
+                  Foto dikirim seller - tap untuk lihat
                 </p>
                 <p className="text-xs text-muted">
                   Update kualitas dari dapur seller

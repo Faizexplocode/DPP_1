@@ -1,5 +1,5 @@
 // ============================================================
-// PawonSync — TypeScript Type Definitions
+// PawonSync - TypeScript Type Definitions
 // ============================================================
 
 export type OrderStage =

@@ -28,7 +28,7 @@ export default function HubungiSeller({
         onBack={() => router.push(`/buyer/pesanan/${id}`)}
       />
 
-      <div className="flex-1 overflow-y-auto p-5 pb-8">
+      <div className="flex-1 overflow-y-auto px-5 py-4 pb-8">
         <Card className="mb-4">
           <h2 className="mb-1.5 text-lg font-extrabold">{order.seller}</h2>
           <p className="text-xs text-muted">

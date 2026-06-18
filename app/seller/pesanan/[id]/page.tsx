@@ -4,7 +4,7 @@ import { use } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { useOrders } from "@/app/context/order-context";
-import { getStatusLabel, sellerTimelineStages } from "@/app/lib/mock-data";
+import { sellerTimelineStages } from "@/app/lib/mock-data";
 import TopBar from "@/app/components/layout/top-bar";
 import { Card } from "@/app/components/ui/card";
 import { Timeline } from "@/app/components/ui/timeline";
@@ -73,11 +73,11 @@ export default function SellerOrderDetail({
         onBack={() => router.push("/seller/pesanan")}
       />
 
-      <div className="flex-1 overflow-y-auto p-5 pb-8">
+      <div className="flex-1 overflow-y-auto px-5 py-4 pb-8">
         {/* Header */}
         <Card>
           <h2 className="mb-1.5 text-[22px] font-extrabold">
-            {order.title} — {order.customer}
+            {order.title} - {order.customer}
           </h2>
           <p className="text-xs text-muted">
             {order.servings} {order.unit}

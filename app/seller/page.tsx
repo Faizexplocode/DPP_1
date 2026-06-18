@@ -29,7 +29,7 @@ export default function SellerDashboard() {
         </button>
       </div>
 
-      <div className="flex-1 overflow-y-auto p-5 pb-8">
+      <div className="flex-1 overflow-y-auto px-5 py-4 pb-8">
         {/* Hero Card */}
         <HeroCard className="mb-5">
           <div className="flex items-center justify-between">
@@ -47,7 +47,7 @@ export default function SellerDashboard() {
         </HeroCard>
 
         {/* Stats */}
-        <div className="mb-5 flex gap-4">
+        <div className="mb-5 flex gap-3">
           <div className="flex-1 rounded-[18px] border border-border bg-white p-4">
             <p className="mb-2 text-3xl font-extrabold leading-none text-green-dark">
               {activeOrders.length}
@@ -79,7 +79,7 @@ export default function SellerDashboard() {
           </Link>
         </div>
 
-        <div className="mb-5 flex flex-col gap-4">
+        <div className="mb-5 flex flex-col gap-3">
           {activeOrders.map((order) => (
             <Link
               key={order.id}

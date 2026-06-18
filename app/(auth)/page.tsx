@@ -7,11 +7,11 @@ export default function SplashPage() {
   const router = useRouter();
 
   return (
-    <div className="flex flex-col flex-1 justify-between">
+    <div className="flex flex-col flex-1 justify-between px-8 pt-12 pb-14 overflow-y-auto">
       {/* Top spacer */}
       <div />
 
-      {/* Center — branding */}
+      {/* Center - branding */}
       <div className="flex-1 flex flex-col items-center justify-center">
         <div className="relative mx-auto mb-10 w-28 h-28">
           {/* Outer glow */}
@@ -38,9 +38,10 @@ export default function SplashPage() {
         </p>
       </div>
 
-      {/* Bottom — actions */}
-      <div>
-        <Button
+      {/* Bottom - actions */}
+      <div className="mb-6 w-full flex flex-col items-center">
+        <div className="w-full max-w-[280px]">
+          <Button
           variant="primary"
           onClick={() => router.push('/login/seller')}
         >
@@ -61,6 +62,7 @@ export default function SplashPage() {
             Daftar
           </span>
         </p>
+        </div>
       </div>
     </div>
   );

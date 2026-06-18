@@ -27,7 +27,7 @@ export default function DummyPlatePage({
         onBack={() => router.push("/seller/dapur")}
       />
 
-      <div className="flex-1 overflow-y-auto p-5 pb-8">
+      <div className="flex-1 overflow-y-auto px-5 py-4 pb-8">
         <h3 className="mt-2 text-center text-lg font-extrabold">
           {order.title.toUpperCase()} &middot; {order.servings} PORSI
         </h3>

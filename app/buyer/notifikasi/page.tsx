@@ -16,7 +16,7 @@ export default function NotifikasiPage() {
         </h1>
       </div>
 
-      <div className="flex-1 overflow-y-auto p-5 pb-8">
+      <div className="flex-1 overflow-y-auto px-5 py-4 pb-8">
         {/* Today */}
         <h3 className="mb-2.5 text-xs font-extrabold uppercase tracking-widest text-muted">
           Hari Ini

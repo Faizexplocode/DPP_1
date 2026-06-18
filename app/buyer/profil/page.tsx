@@ -18,7 +18,7 @@ export default function BuyerProfil() {
         <h1 className="text-[17px] font-extrabold text-foreground">Profil</h1>
       </div>
 
-      <div className="flex-1 overflow-y-auto p-5 pb-8">
+      <div className="flex-1 overflow-y-auto px-5 py-4 pb-8">
         <HeroCard className="mb-4">
           <h2 className="text-[26px] font-extrabold">{buyerProfile.name}</h2>
           <p className="text-[13px] opacity-90">Buyer PawonSync</p>

@@ -1,15 +1,8 @@
 import type { Metadata } from "next";
-import { Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 
-const plusJakartaSans = Plus_Jakarta_Sans({
-  variable: "--font-plus-jakarta-sans",
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700", "800"],
-});
-
 export const metadata: Metadata = {
-  title: "PawonSync — Ketenangan dari Dapur hingga Venue",
+  title: "PawonSync - Ketenangan dari Dapur hingga Venue",
   description:
     "Aplikasi manajemen pesanan katering yang menghubungkan seller dan buyer. Pantau progress pesanan secara real-time dari dapur hingga lokasi acara.",
   keywords: ["katering", "pesanan", "catering", "PawonSync", "manajemen"],
@@ -21,7 +14,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="id" className={plusJakartaSans.variable}>
+    <html lang="id">
       <body>
         {/* Desktop side branding */}
         <aside className="desktop-shell">
@@ -42,11 +35,11 @@ export default function RootLayout({
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-dark to-green-light">Platform</span>
           </h1>
           
-          <p className="mb-10 text-[15px] leading-relaxed text-muted font-medium max-w-[90%]">
+          <p className="mb-16 text-[15px] leading-relaxed text-muted font-medium max-w-[90%]">
             Sistem manajemen pesanan katering terpadu. Pantau progress pesanan secara real-time dari dapur hingga tiba di lokasi acara Anda dengan ketenangan penuh.
           </p>
           
-          <div className="flex flex-col gap-4 text-[13px] font-bold text-foreground">
+          <div className="flex flex-col gap-6 text-[13px] font-bold text-foreground">
             <div className="flex items-center gap-3 bg-white/60 backdrop-blur-md p-4 rounded-2xl border border-white/50 shadow-sm transition-all hover:scale-[1.02] hover:bg-white/80">
               <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-green-light/20 text-green-dark">
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>

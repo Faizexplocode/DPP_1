@@ -4,7 +4,7 @@ export default function AuthLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <div className="screen gradient-auth-bg px-8 pt-12 pb-14 flex flex-col overflow-y-auto">
+    <div className="screen gradient-auth-bg flex flex-col overflow-hidden">
       {children}
     </div>
   );

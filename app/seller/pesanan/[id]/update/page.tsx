@@ -11,6 +11,12 @@ import { Modal } from "@/app/components/ui/modal";
 import { useToast } from "@/app/components/ui/toast";
 import type { OrderStage } from "@/app/types";
 
+function getDefaultSelectedStage(stage?: OrderStage | string): OrderStage {
+  if (stage === "packing") return "ready";
+  if (stage === "cooking") return "packing";
+  return (stage as OrderStage | undefined) ?? "packing";
+}
+
 export default function UpdatePage({
   params,
 }: {
@@ -23,34 +29,35 @@ export default function UpdatePage({
   const order = getOrder(id);
 
   const [showSuccess, setShowSuccess] = useState(false);
-
-  if (!order) return null;
+  const [selected, setSelected] = useState<OrderStage>(() =>
+    getDefaultSelectedStage(order?.stage),
+  );
 
   // Determine available update options based on current stage
   let options: { key: OrderStage; label: string }[] = [];
-  let defaultSelected: OrderStage = "packing";
+
+  if (!order) return null;
 
   if (order.stage === "cooking") {
     options = [
       { key: "cooking", label: "Bahan siap dimasak" },
       { key: "packing", label: "Sedang dikemas" },
     ];
-    defaultSelected = "packing";
   } else if (order.stage === "packing") {
     options = [
       { key: "packing", label: "Sedang dikemas" },
       { key: "ready", label: "Siap berangkat" },
     ];
-    defaultSelected = "ready";
   } else {
     options = [{ key: order.stage as OrderStage, label: getStatusLabel(order.stage) }];
-    defaultSelected = order.stage as OrderStage;
   }
 
-  const [selected, setSelected] = useState<OrderStage>(defaultSelected);
+  const selectedStage = options.some((option) => option.key === selected)
+    ? selected
+    : getDefaultSelectedStage(order.stage);
 
   function handleSubmit() {
-    updateOrderStage(id, selected);
+    updateOrderStage(id, selectedStage);
     setShowSuccess(true);
   }
 
@@ -61,7 +68,7 @@ export default function UpdatePage({
         onBack={() => router.push(`/seller/pesanan/${id}`)}
       />
 
-      <div className="flex-1 overflow-y-auto p-5 pb-8">
+      <div className="flex-1 overflow-y-auto px-5 py-4 pb-8">
         {/* Info Note */}
         <div className="mb-4 rounded-[14px] border border-border bg-[#f1f5ed] p-3.5 text-xs leading-relaxed text-muted">
           Update ini akan dikirim otomatis ke pembeli sebagai notifikasi
@@ -79,7 +86,7 @@ export default function UpdatePage({
             <div
               key={option.key}
               className={`flex cursor-pointer items-center gap-2.5 rounded-[14px] border-[1.5px] bg-white p-3.5 transition-all ${
-                selected === option.key
+                selectedStage === option.key
                   ? "border-green-dark bg-soft"
                   : "border-border"
               }`}
@@ -87,12 +94,12 @@ export default function UpdatePage({
             >
               <span
                 className={`flex h-[18px] w-[18px] flex-shrink-0 items-center justify-center rounded-full border-2 ${
-                  selected === option.key
+                  selectedStage === option.key
                     ? "border-green-dark"
                     : "border-[#bec8b6]"
                 }`}
               >
-                {selected === option.key && (
+                {selectedStage === option.key && (
                   <span className="block h-2 w-2 rounded-full bg-green-dark" />
                 )}
               </span>

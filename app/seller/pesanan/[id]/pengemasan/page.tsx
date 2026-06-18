@@ -40,7 +40,7 @@ export default function PengemasanPage({
         onBack={() => router.push(`/seller/pesanan/${id}`)}
       />
 
-      <div className="flex-1 overflow-y-auto p-5 pb-8">
+      <div className="flex-1 overflow-y-auto px-5 py-4 pb-8">
         <div className="mb-4 text-center">
           <h3 className="text-lg font-extrabold">
             {order.title} - Target: {order.target} kotak
@@ -92,7 +92,7 @@ export default function PengemasanPage({
         </div>
 
         <Button variant="primary" className="mt-5" onClick={handleFinish}>
-          Selesai Kemas — Kirim Update
+          Selesai Kemas - Kirim Update
         </Button>
       </div>
 

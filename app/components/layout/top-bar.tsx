@@ -12,7 +12,7 @@ interface TopBarProps {
 export default function TopBar({ title, onBack, rightAction, leftAlign }: TopBarProps) {
   return (
     <div
-      className={`h-[60px] px-4 bg-surface border-b border-border flex items-center relative flex-shrink-0 ${
+      className={`h-[60px] px-5 bg-surface border-b border-border flex items-center relative flex-shrink-0 ${
         leftAlign ? 'justify-start' : 'justify-center'
       } ${leftAlign && onBack ? 'pl-12' : ''}`}
     >

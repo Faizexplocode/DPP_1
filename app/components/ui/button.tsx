@@ -15,21 +15,21 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 
 const variantStyles: Record<ButtonVariant, string> = {
   primary:
-    'bg-green-dark text-white shadow-lg hover:brightness-110',
+    'bg-gradient-to-r from-[#468432] to-[#519c39] text-white shadow-[0_8px_20px_-6px_rgba(70,132,50,0.5)] hover:shadow-[0_12px_24px_-6px_rgba(70,132,50,0.6)] border border-[#529e3a]/20',
   secondary:
-    'bg-white text-green-dark border-[1.5px] border-green-dark',
+    'bg-white text-green-dark shadow-[0_4px_12px_-4px_rgba(0,0,0,0.1)] hover:shadow-[0_8px_16px_-6px_rgba(0,0,0,0.15)] border border-border/80',
   dark:
-    'bg-foreground text-white',
+    'bg-gradient-to-r from-foreground to-[#2a2a2a] text-white shadow-lg shadow-black/20',
   outline:
-    'bg-white text-green-dark border border-border',
+    'bg-transparent text-green-dark border-2 border-green-dark/20 hover:border-green-dark hover:bg-green-dark/5',
   ghost:
-    'bg-transparent text-green-dark',
+    'bg-transparent text-green-dark hover:bg-green-dark/10',
 };
 
 const sizeStyles: Record<ButtonSize, string> = {
   sm: 'h-[36px] px-3.5 text-xs',
-  md: 'h-[50px] px-5 text-sm',
-  lg: 'h-[54px] px-6 text-base',
+  md: 'h-[46px] px-5 text-[13px]',
+  lg: 'h-[52px] px-6 text-[15px]',
 };
 
 const Button = forwardRef<HTMLButtonElement, ButtonProps>(
@@ -52,12 +52,12 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
         ref={ref}
         disabled={isDisabled}
         className={[
-          'w-full rounded-[14px] font-bold transition-all duration-200 flex items-center justify-center gap-2',
+          'w-full rounded-full font-bold transition-all duration-300 flex items-center justify-center gap-2',
           variantStyles[variant],
           sizeStyles[size],
           isDisabled
             ? 'opacity-50 cursor-not-allowed'
-            : 'hover:-translate-y-[1px] active:translate-y-0',
+            : 'hover:-translate-y-[2px] active:translate-y-[1px] active:scale-[0.98]',
           className,
         ].join(' ')}
         {...rest}

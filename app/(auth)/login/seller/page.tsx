@@ -16,10 +16,10 @@ export default function SellerLoginPage() {
 
   return (
     <>
-      <TopBar title="Masuk — Seller" onBack={() => router.push('/')} />
+      <TopBar title="Masuk - Seller" onBack={() => router.push('/')} />
 
-      <div className="p-4 flex-1 overflow-y-auto">
-        <HeroCard className="mb-4">
+      <div className="px-6 py-8 flex-1 overflow-y-auto">
+        <HeroCard className="mb-6">
           <span className="inline-flex items-center px-2.5 py-1.5 rounded-full bg-white/20 text-white text-xs font-extrabold mb-3">
             Akun Seller
           </span>

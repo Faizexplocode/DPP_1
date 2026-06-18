@@ -25,7 +25,7 @@ function Card({ className = '', children, onClick }: CardProps) {
           : undefined
       }
       className={[
-        'bg-card border border-border rounded-[18px] p-3.5 shadow-sm',
+        'bg-card border border-border rounded-[18px] p-4 shadow-sm',
         onClick
           ? 'cursor-pointer hover:shadow-lg hover:-translate-y-[2px] transition-all'
           : '',
@@ -48,7 +48,7 @@ function HeroCard({ className = '', children }: HeroCardProps) {
   return (
     <div
       className={[
-        'gradient-hero text-white border-none rounded-[18px] p-3.5 shadow-lg',
+        'gradient-hero text-white border-none rounded-[18px] p-4 shadow-lg',
         className,
       ].join(' ')}
     >

@@ -40,7 +40,7 @@ export default function BuyerDashboard() {
       </div>
 
       {/* Content */}
-      <div className="flex-1 overflow-y-auto p-5 pb-8">
+      <div className="flex-1 overflow-y-auto px-5 py-4 pb-8">
         {/* Hero Card - Main Active Order */}
         {wisuda && (
           <HeroCard className="mb-5">
@@ -86,7 +86,7 @@ export default function BuyerDashboard() {
           </Link>
         </div>
 
-        <div className="flex flex-col gap-4">
+        <div className="flex flex-col gap-3">
           {activeOrders.map((order) => (
             <Link
               key={order.id}

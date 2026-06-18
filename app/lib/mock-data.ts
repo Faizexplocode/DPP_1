@@ -1,5 +1,5 @@
 // ============================================================
-// PawonSync — Mock Data (to be replaced with Supabase later)
+// PawonSync - Mock Data (to be replaced with Supabase later)
 // ============================================================
 
 import type { Order, Notification, UserProfile, Ingredient, TimelineStage } from "@/app/types";

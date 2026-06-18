@@ -29,7 +29,7 @@ export default function BuyerPesanan() {
     <>
       <TopBar title="Pesanan Saya" onBack={() => router.push("/buyer")} />
 
-      <div className="flex-1 overflow-y-auto p-5 pb-8">
+      <div className="flex-1 overflow-y-auto px-5 py-4 pb-8">
         <SearchInput
           placeholder="Cari pesanan..."
           value={search}

@@ -38,6 +38,31 @@ export function OrderProvider({ children }: { children: ReactNode }) {
     [ordersState],
   );
 
+  const allOrders = useMemo(() => Object.values(ordersState), [ordersState]);
+
+  const activeOrders = useMemo(
+    () =>
+      allOrders.filter(
+        (order) => order.stage !== 'done' && order.stage !== 'upcoming',
+      ),
+    [allOrders],
+  );
+
+  const todayOrders = useMemo(
+    () => allOrders.filter((order) => order.today === true),
+    [allOrders],
+  );
+
+  const upcomingOrders = useMemo(
+    () => allOrders.filter((order) => order.today === false),
+    [allOrders],
+  );
+
+  const historyOrders = useMemo(
+    () => allOrders.filter((order) => order.stage === 'done'),
+    [allOrders],
+  );
+
   const updateOrderStage = useCallback(
     (id: string, stage: OrderStage) => {
       setOrdersState((prev) => {
@@ -75,28 +100,21 @@ export function OrderProvider({ children }: { children: ReactNode }) {
     [],
   );
 
-  const getActiveOrders = useCallback(
-    (): Order[] =>
-      Object.values(ordersState).filter(
-        (o) => o.stage !== 'done' && o.stage !== 'upcoming',
-      ),
-    [ordersState],
-  );
+  const getActiveOrders = useCallback((): Order[] => activeOrders, [activeOrders]);
 
   const getTodayOrders = useCallback(
-    (): Order[] => Object.values(ordersState).filter((o) => o.today === true),
-    [ordersState],
+    (): Order[] => todayOrders,
+    [todayOrders],
   );
 
   const getUpcomingOrders = useCallback(
-    (): Order[] => Object.values(ordersState).filter((o) => o.today === false),
-    [ordersState],
+    (): Order[] => upcomingOrders,
+    [upcomingOrders],
   );
 
   const getHistoryOrders = useCallback(
-    (): Order[] =>
-      Object.values(ordersState).filter((o) => o.stage === 'done'),
-    [ordersState],
+    (): Order[] => historyOrders,
+    [historyOrders],
   );
 
   const value = useMemo<OrderContextValue>(
