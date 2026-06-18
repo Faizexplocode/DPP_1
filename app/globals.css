@@ -1,26 +1,223 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+/* ============================================================
+   PawonSync — Design System
+   Color Palette: #468432 · #9AD872 · #FFEF91 · #FFA02E
+   ============================================================ */
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  /* ── Brand Colors ─────────────────────────────────────── */
+  --color-green-dark: #468432;
+  --color-green-light: #9AD872;
+  --color-yellow-soft: #FFEF91;
+  --color-orange-main: #FFA02E;
+
+  /* ── Semantic Colors ──────────────────────────────────── */
+  --color-background: #f7f8f4;
+  --color-foreground: #1f2937;
+  --color-surface: #ffffff;
+  --color-muted: #6b7280;
+  --color-border: #d8dfd0;
+  --color-soft: #eef5e8;
+  --color-card: #ffffff;
+
+  /* ── Status Colors ────────────────────────────────────── */
+  --color-status-processing-bg: #fff4dd;
+  --color-status-processing-text: #8a5b00;
+  --color-status-processing-border: rgba(255, 160, 46, 0.3);
+
+  --color-status-packing-bg: #e6f5da;
+  --color-status-packing-text: #468432;
+  --color-status-packing-border: rgba(70, 132, 50, 0.2);
+
+  --color-status-ready-bg: rgba(70, 132, 50, 0.14);
+  --color-status-ready-text: #468432;
+  --color-status-ready-border: rgba(70, 132, 50, 0.2);
+
+  --color-status-waiting-bg: #eef2f7;
+  --color-status-waiting-text: #506070;
+  --color-status-waiting-border: #dce3ec;
+
+  --color-status-done-bg: rgba(70, 132, 50, 0.14);
+  --color-status-done-text: #468432;
+  --color-status-done-border: rgba(70, 132, 50, 0.2);
+
+  /* ── Shadows ──────────────────────────────────────────── */
+  --shadow-sm: 0 2px 8px rgba(70, 132, 50, 0.06);
+  --shadow-md: 0 8px 18px rgba(70, 132, 50, 0.08);
+  --shadow-lg: 0 14px 30px rgba(70, 132, 50, 0.12);
+  --shadow-xl: 0 25px 60px rgba(0, 0, 0, 0.14);
+
+  /* ── Radius ───────────────────────────────────────────── */
+  --radius-sm: 10px;
+  --radius-md: 14px;
+  --radius-lg: 18px;
+  --radius-xl: 24px;
+  --radius-full: 999px;
+
+  /* ── Font ──────────────────────────────────────────────── */
+  --font-sans: var(--font-plus-jakarta-sans), system-ui, sans-serif;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* ── Base Styles ──────────────────────────────────────────── */
+
+:root {
+  color-scheme: light;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  min-height: 100vh;
+  background: var(--color-background);
+  color: var(--color-foreground);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::selection {
+  background: rgba(154, 216, 114, 0.3);
+  color: var(--color-foreground);
+}
+
+/* Focus ring */
+:focus-visible {
+  outline: 2px solid var(--color-green-dark);
+  outline-offset: 2px;
+}
+
+/* ── Scrollbar ────────────────────────────────────────────── */
+
+::-webkit-scrollbar {
+  width: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-border);
+  border-radius: var(--radius-full);
+}
+
+/* ── Desktop Layout ───────────────────────────────────────── */
+
+.desktop-shell {
+  display: none;
+}
+
+@media (min-width: 769px) {
+  body {
+    background:
+      radial-gradient(circle at top left, rgba(154, 216, 114, 0.2), transparent 30%),
+      radial-gradient(circle at bottom right, rgba(255, 160, 46, 0.12), transparent 30%),
+      linear-gradient(135deg, #f0f4ec, #fffdf5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    gap: 0;
+  }
+
+  .desktop-shell {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 320px;
+    padding: 48px 40px;
+    flex-shrink: 0;
+  }
+
+  .app-container {
+    width: 430px;
+    height: 860px;
+    max-height: 92vh;
+    background: var(--color-surface);
+    border-radius: 28px;
+    overflow: hidden;
+    box-shadow: var(--shadow-xl);
+    position: relative;
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 768px) {
+  .app-container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+/* ── Animations ───────────────────────────────────────────── */
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes scaleIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.2s ease-out;
+}
+
+.animate-slide-up {
+  animation: slideUp 0.25s ease-out;
+}
+
+.animate-slide-down {
+  animation: slideDown 0.2s ease-out;
+}
+
+.animate-scale-in {
+  animation: scaleIn 0.2s ease-out;
+}
+
+/* ── Gradient Utilities ───────────────────────────────────── */
+
+.gradient-hero {
+  background: linear-gradient(145deg, var(--color-green-dark), #5d9b47);
+}
+
+.gradient-auth-bg {
+  background:
+    radial-gradient(circle at top right, rgba(154, 216, 114, 0.4), transparent 35%),
+    radial-gradient(circle at bottom left, rgba(255, 160, 46, 0.22), transparent 35%),
+    #fff;
+}
+
+/* ── Screen Layout ────────────────────────────────────────── */
+
+.screen {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  height: 100%;
+  overflow: hidden;
+  background: var(--color-background);
+  animation: fadeIn 0.2s ease-out;
 }
